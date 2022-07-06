@@ -169,9 +169,26 @@ INSERT INTO `record` VALUES (3, 1, 200, 16000000, '2022-07');
 使用方式
 
 ```sql
-使用montask/main.go生成月统计记录，该记录是已经计算总消费。
+1）说明：使用montask/main.go生成月统计记录，该记录是已经计算总消费。
 使用member/main.go直接查month_stat表的月总消费总消费即可。
+
+2）拉取test代码
+git pull https://github.com/seanshenhy/test.git test
+
+3) 采用docker安装mariadb
+docker pull mariadb:latest
+
+4) 运行mariadb
+docker run -d -p 3306:3306 --name mariadb -e MYSQL_ROOT_PASSWORD=123456 mariadb
+
+5) 运行sql数据
+6) 运行统计代码
+cd {path}/test
+go run cmd/montask/main.go
+7) 查看统计代码
+go run cmd/member/main.go
 ```
+
 
 
 
